@@ -18,13 +18,17 @@ class displayController {
                 `<span class="font-semibold mt-1 text-gray-500">${this.response.name}, ${this.response.sys.country}</span>` +
 
                 '<form id="search">' +
-                    '<input type="text" id="location">' +
+                    '<input type="text" id="location" required>' +
                     '<input type="submit">' +
                 '</form>' +
             '</div>' +
         '</div>'
 
         this.container.appendChild(topContainer)
+    }
+
+    clearDisplay = () => {
+        this.container.innerHTML = ''
     }
 }
 

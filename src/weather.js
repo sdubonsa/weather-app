@@ -16,11 +16,12 @@ class Weather {
             const display = new displayController(response)
             const search = new Search()
 
-            // render display
+            // clear and render display
+            display.clearDisplay()
             display.topDisplay()
 
             // set-up search logic
-            search.searchForm()
+            search.searchUpdate()
         })
     }
 }
