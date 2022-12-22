@@ -11,7 +11,7 @@ class Search {
             if(!response.ok) {
                 throw new Error('Invalid Location')
             }
-            
+
             return response.json()
         })
         .then(function(response) {
@@ -19,11 +19,12 @@ class Search {
             weather_app.renderDisplay()
         })
         .catch(function(error){
-            alert('Location is not found please input valid city')
+            const err = document.getElementById('error')
+            err.classList.remove('hidden')
         })
     }
 
-    searchUpdate = () => {
+    searchHandler = () => {
         const search = document.getElementById('search')
         
         search.addEventListener('submit', function(event) {
