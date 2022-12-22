@@ -1,4 +1,5 @@
 import { displayController } from "./display-controller"
+import { Search } from "./search"
 
 class Weather {
     constructor(location) {
@@ -13,7 +14,13 @@ class Weather {
         })
         .then(function(response){
             const display = new displayController(response)
-            display.miniDisplay()
+            const search = new Search()
+
+            // render display
+            display.topDisplay()
+
+            // set-up search logic
+            search.searchForm()
         })
     }
 }
